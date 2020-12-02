@@ -16,6 +16,9 @@ const PostSchema = new EntitySchema({
     text: {
       type: 'text',
     },
+    image: {
+      type: 'text',
+    },
   },
   relations: {
     users: {

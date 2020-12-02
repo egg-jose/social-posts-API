@@ -18,6 +18,7 @@ const routes = [
         payload: Joi.object({
           title: Joi.string().required(),
           text: Joi.string().required(),
+          image: Joi.string().required(),
         }),
         failAction: (request, h, error) => {
           return error.isJoi
@@ -50,6 +51,7 @@ const routes = [
         payload: Joi.object({
           title: Joi.string().optional(),
           text: Joi.string().optional(),
+          image: Joi.string().optional(),
         }),
         failAction: (request, h, error) => {
           return error.isJoi
