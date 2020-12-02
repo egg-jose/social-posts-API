@@ -1,0 +1,46 @@
+{
+  "name": "social-posts-api",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/jose1897/wikiAnimeAPI.git",
+  "author": "Jose Esteban Garcia Grullon",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel ./src --out-dir build",
+    "serve": "node build/index.js",
+    "lint": "eslint src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@hapi/code": "^8.0.2",
+    "@hapi/lab": "^24.1.0",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^8.5.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.0",
+    "@hapi/hapi": "^20.0.3",
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "hapi-auth-jwt2": "^10.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.5.1",
+    "typeorm": "^0.2.29"
+  }
+}
