@@ -8,8 +8,11 @@ jobs:
     steps:
       - checkout
       - run:
-          command: yarn install
-          name: Run YARN install
+          command: npm install
+          name: Run npm install
       - run:
-          command: yarn run lint
-          name: Run YARN ESLINT
+          command: npm run lint
+          name: Run npm ESLINT
+      - run:
+          command: npm test
+          name: Run npm test

@@ -120,7 +120,7 @@ const deleteUser = async (request, h) => {
   try {
     if (!request.admin) return Boom.forbidden('User no allow');
     results.results = await getRepository(User).delete(request.params.id);
-    return h.response(results).code(203);
+    return h.response(results).code(202);
   } catch (error) {
     return Boom.internal(`Error: ${error}`);
   }
