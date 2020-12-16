@@ -13,12 +13,19 @@ const routes = [
     path: '/posts',
     // config: { auth: 'jwt' },
     options: {
+      payload: {
+        maxBytes: 1024 * 1024 * 5,
+        multipart: {
+          output: 'file',
+        },
+        parse: true,
+      },
       auth: 'jwt',
       validate: {
         payload: Joi.object({
           title: Joi.string().required(),
           text: Joi.string().required(),
-          image: Joi.string().required(),
+          image: Joi.object().required(),
         }),
         failAction: (request, h, error) => {
           return error.isJoi
@@ -51,7 +58,7 @@ const routes = [
         payload: Joi.object({
           title: Joi.string().optional(),
           text: Joi.string().optional(),
-          image: Joi.string().optional(),
+          image: Joi.object().optional(),
         }),
         failAction: (request, h, error) => {
           return error.isJoi
