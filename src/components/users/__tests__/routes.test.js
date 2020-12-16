@@ -1,6 +1,10 @@
 import { start } from '../../../server';
 import env from '../../../config/environment';
 
+test('simple', () => {
+  expect(true).toBe(true);
+});
+
 describe('Users POST /users', () => {
   let server;
 
